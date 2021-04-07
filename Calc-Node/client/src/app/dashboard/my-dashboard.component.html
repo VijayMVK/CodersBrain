@@ -1,0 +1,78 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4 class="card-title m-b-0">Traffic</h4>
+                    <div class="small text-muted">November 2015</div>
+                </div>
+                <div class="col-sm-6 right-side-card">
+                    <div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group" data-toggle="buttons" aria-label="First group">
+                            <label class="btn btn-outline-secondary">
+                                <input type="radio" name="options" id="option1">Day
+                            </label>
+                            <label class="btn btn-outline-secondary active">
+                                <input type="radio" name="options" id="option2" checked>Month
+                            </label>
+                            <label class="btn btn-outline-secondary">
+                                <input type="radio" name="options" id="option3">Year
+                            </label>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Second group">
+                            <button type="button" class="btn btn-primary">
+                                <i class="icon-cloud-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+                <canvas baseChart class="chart" [datasets]="mainChartData" [labels]="mainChartLabels" [options]="mainChartOptions" [colors]="mainChartColours"
+                    [legend]="mainChartLegend" [chartType]="mainChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"
+                    style="height:300px;"></canvas>
+            </div>
+        </div>
+        <div class="card-footer">
+            <ul>
+                <li>
+                    <div class="text-muted">Visits</div>
+                    <strong>29.703 Users (40%)</strong>
+                    <progress class="progress progress-xs progress-success" value="40" max="100">40%</progress>
+                </li>
+                <li class="hidden-xs-down">
+                    <div class="text-muted">Unique</div>
+                    <strong>24.093 Unique Users (20%)</strong>
+                    <progress class="progress progress-xs progress-info" value="20" max="100">20%</progress>
+                </li>
+                <li>
+                    <div class="text-muted">Pageviews</div>
+                    <strong>78.706 Views (60%)</strong>
+                    <progress class="progress progress-xs progress-warning" value="60" max="100">60%</progress>
+                </li>
+                <li class="hidden-xs-down">
+                    <div class="text-muted">New Users</div>
+                    <strong>22.123 Users (80%)</strong>
+                    <progress class="progress progress-xs progress-danger" value="80" max="100">80%</progress>
+                </li>
+                <li class="hidden-xs-down">
+                    <div class="text-muted">Bounce Rate</div>
+                    <strong>40.15%</strong>
+                    <progress class="progress progress-xs progress-primary" value="40" max="100">40%</progress>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-block">
+            <div class="row">
+                <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+                        <employee></employee>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿<div class="col-sm-12">
+    <div class="panel panel-default table-responsive" *ngIf="this.employeeList===undefined">
+        <h6 style="text-align:center;vertical-align:middle; background-color:white;"><img src="../../assets/img/loading.gif" alt="Loading" /></h6>
+    </div>
+    <div class="panel panel-default table-responsive" *ngIf="this.toCheckEmptyRow()">
+        <h6 style="text-align:center;vertical-align:middle; background-color:white;height: 55px;"><br/>No record(s) found.</h6>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 employee-table-header-left">
+    <button style="float:left" type="submit" id="newEmployee" class="btn btn-success" (click)="addEmployee()" *ngIf="!editForm"><span class="fa fa-plus-circle"> New employee </span> </button>
+    <button style="float:left" type="submit" id="btnClose" class="btn btn-danger" (click)="init()" *ngIf="editForm"><span class="fa fa-close"> Close </span> </button>
+</div>
+
+<div class="col-sm-12">
+    <div class="panel panel-default table-responsive" *ngIf="this.toCheckDataHasRows();">
+        <table class="table table-striped emp-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%">
+                        Employee Name
+                    </th>
+                    <th style="width: 20%">
+                        Salary
+                    </th>
+                    <th style="width: 20%">
+                        Department Number
+                    </th>
+                    <th style="width: 10%">Edit</th>
+                    <th style="width: 10%">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of employeeList">
+                    <td style="display: none;">{{item.EmpNo}}</td>
+                    <td>{{item.EmpName}}</td>
+                    <td>{{item.Salary}}</td>
+                    <td>{{item.DeptNo}}</td>
+                    <td>
+                        <span (click)="updateEmployee(item)" title="Edit" class="fa fa-pencil" style="cursor:pointer;"></span>
+                    </td>
+                    <td>
+                        <span (click)="deleteEmployee(item.EmpNo)" title="Delete" class="fa fa-trash-o" style="cursor:pointer;"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="this.showDialog" class="col-sm-12">
+        <table>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" [(ngModel)]="empName" /></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input type="number" [(ngModel)]="salary" /></td>
+            </tr>
+            <tr>
+                <td>Department Number</td>
+                <td><input type="number" [(ngModel)]="deptNo" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button (click)="onSubmit()">Submit</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
