@@ -1,0 +1,18 @@
+[
+    {
+        "name": "add",
+        "value": "+"
+    },
+    {
+        "name": "sub",
+        "value": "-"
+    },
+    {
+        "name": "mul",
+        "value": "*"
+    },
+    {
+        "name": "div",
+        "value": "/"
+    }
+]
